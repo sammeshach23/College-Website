@@ -1,5 +1,7 @@
 College Website
 This is a responsive and modern college website developed using HTML, CSS, JavaScript, and Bootstrap. The website is designed to showcase information about the college, including details about courses, faculty, events, and more.<br><br>
+SITE IS LIVE AT:https://seceweb.netlify.app/
+
 
 Technologies Used:<br>
 HTML: Used for structuring the content of the web pages.<br>
