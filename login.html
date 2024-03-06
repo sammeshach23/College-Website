@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Contact</title>
+  <title>SignIn/SignUp</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -45,7 +45,7 @@
           <li><a href="trainers.html">Faculty</a></li>
           <li><a href="events.html">Events</a></li>
           <li><a href="pricing.html">Fees Structure</a></li>
-          <li class="dropdown"><a href="#"><span>Academics</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="about.html"><span>Academics</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="pricing.html">Fees Structure</a></li>
               <li class="dropdown"><a href="#"><span>Departments</span> <i class="bi bi-chevron-right"></i></a>
@@ -57,9 +57,9 @@
                   <li><a href="courses.html">MECH</a></li>
                 </ul>
               </li>
-              <li><a href="#">Library</a></li>
-              <li><a href="#">Sports</a></li>
-              <li><a href="#">Placements</a></li>
+              <li><a href="about.html">Library</a></li>
+              <li><a href="about.html">Sports</a></li>
+              <li><a href="about.html">Placements</a></li>
             </ul>
           </li>
           <li><a class="active" href="contact.html">Contact</a></li>
@@ -77,15 +77,14 @@
     
     <div class="breadcrumbs" data-aos="fade-in">
       <div class="container">
-        <h2>Contact Us</h2>
+        <h2>SignIn/SignUp</h2>
              </div>
     </div>
 
  
     <section id="contact" class="contact">
       <div data-aos="fade-up">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.7829807748426!2d77.05794187451775!3d10.82791325824298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba84ee37569ae7f%3A0x3c5b1824b6e79192!2sSri%20Eshwar%20College%20of%20Engineering%2C%20Coimbatore!5e0!3m2!1sen!2sin!4v1709182210490!5m2!1sen!2sin" width="1500" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">      
-      </iframe>
+       
       </div> 
 
       <div class="container" data-aos="fade-up">
@@ -118,34 +117,62 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+    <div class="signin-signup-container">
+        <div id="signin-form">
+            <h2>Sign In</h2>
+            <form action="signin.php" method="post" role="form" class="php-email-form">
+                <div class="form-group">
+                    <input type="text" name="username" class="form-control" id="signin-username" placeholder="Username" required>
                 </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="password" id="signin-password" placeholder="Password" required>
                 </div>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+                <div class="my-3">
+                    <div class="loading">Loading</div>
+                    <div class="error-message"></div>
+                </div>
+                <div class="text-center">
+                    <button type="submit">Sign In</button>
+                    <p class="switch-form">Don't have an account? <a href="#" onclick="toggleForm('signup-form')">Sign Up</a></p>
+                </div>
             </form>
-
-          </div>
-
         </div>
 
-      </div>
+        <div id="signup-form" style="display:none;">
+            <h2>Sign Up</h2>
+            <form action="signup.php" method="post" role="form" class="php-email-form">
+                <div class="form-group">
+                    <input type="text" name="username" class="form-control" id="signup-username" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="password" id="signup-password" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" name="email" id="signup-email" placeholder="Email" required>
+                </div>
+                <div class="my-3">
+                    <div class="loading">Loading</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">Your account has been created. Thank you!</div>
+                </div>
+                <div class="text-center">
+                    <button type="submit">Sign Up</button>
+                    <p class="switch-form">Already have an account? <a href="#" onclick="toggleForm('signin-form')">Sign In</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function toggleForm(formId) {
+        document.getElementById('signin-form').style.display = formId === 'signin-form' ? 'block' : 'none';
+        document.getElementById('signup-form').style.display = formId === 'signup-form' ? 'block' : 'none';
+    }
+    
+</script>
+
     </section>
 
   </main>
